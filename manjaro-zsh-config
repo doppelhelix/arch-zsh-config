@@ -6,6 +6,7 @@ setopt extendedhistory                                          # Save each comm
 setopt histexpiredupsfirst                                      # If the history needs to be trimmed this option will cause the oldest to be lost before losing a unique event from the list.
 setopt histfindnodups                                           # do not  display  duplicates of a line previously found
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt histignoredups                                           # Do not enter command lines into the history list if they are duplicates of the previous event
 setopt histignorespace                                          # Don't save commands that start with space
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
 setopt nobeep                                                   # No beep
