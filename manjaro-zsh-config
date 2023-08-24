@@ -3,6 +3,7 @@ setopt autocd                                                   # if only direct
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt extendedhistory                                          # Save each command's  beginning  timestamp
+setopt histexpiredupsfirst                                      # If the history needs to be trimmed this option will cause the oldest to be lost before losing a unique event from the list.
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt histignorespace                                          # Don't save commands that start with space
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
