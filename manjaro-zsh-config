@@ -8,6 +8,7 @@ setopt histfindnodups                                           # do not  displa
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt histignoredups                                           # Do not enter command lines into the history list if they are duplicates of the previous event
 setopt histignorespace                                          # Don't save commands that start with space
+setopt histsavenodups                                           # older commands that duplicate newer ones are omitted
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
 setopt nobeep                                                   # No beep
 setopt nocaseglob                                               # Case insensitive globbing
