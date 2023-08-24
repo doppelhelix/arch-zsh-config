@@ -15,6 +15,10 @@ setopt nocaseglob                                               # Case insensiti
 setopt nocheckjobs                                              # Don't warn about running processes when exiting
 setopt numericglobsort                                          # Sort filenames numerically when it makes sense
 setopt rcexpandparam                                            # Array expension with parameters
+HISTFILE=~/.zsh_history                                         # history filename
+HISTTIMEFORMAT="[%F %T] "                                       # Time and date of history entries
+HISTSIZE=10000000                                               # History in memory
+SAVEHIST=100000000                                              # Hostory filesize (bigger than histsize for HIST_IGNORE_ALL_DUPS)
 
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
@@ -24,9 +28,6 @@ zstyle ':completion:*' menu select                              # Highlight menu
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
-HISTFILE=~/.zhistory
-HISTSIZE=10000
-SAVEHIST=10000
 #export EDITOR=/usr/bin/nano
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
@@ -65,7 +66,7 @@ alias df='df -h'                                                # Human-readable
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 
-# Theming section  
+# Theming section
 autoload -U compinit colors zcalc
 compinit -d
 colors
