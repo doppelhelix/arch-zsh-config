@@ -3,7 +3,6 @@
 ZSH_COMPDUMP="$HOME/.cache/zsh/zcompcache"                      #
 ZCOMPCACHE="$HOME/.cache/zsh/zcompcache"                        #
 [[ -d $ZSH_COMPDUMP ]] || mkdir -p $ZSH_COMPDUMP                # Create the parent directory if it doesn't exist
-compinit -d "$ZSH_COMPDUMP/zcompdump"                           #
 ZSH_CACHE_DIR="$HOME/.cache/zsh"                                # Cache directory
 
 
@@ -75,7 +74,7 @@ alias free='free -m'                                            # Show sizes in 
 
 # Theming section
 autoload -U compinit colors zcalc
-compinit -d
+compinit -d "$ZSH_COMPDUMP/zcompdump"                           #
 colors
 
 # Color man pages
