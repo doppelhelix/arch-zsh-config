@@ -299,8 +299,3 @@ function mzc_termsupport_cwd {
 # i.e. when a script or function changes directory without `cd -q`, chpwd
 # will be called the output may be swallowed by the script or function.
 add-zsh-hook precmd mzc_termsupport_cwd
-
-# File and Dir colors for ls and other outputs
-export LS_OPTIONS='--color=auto'
-eval "$(dircolors -b)"
-alias ls='ls $LS_OPTIONS'
