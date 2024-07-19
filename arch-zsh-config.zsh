@@ -299,3 +299,6 @@ function mzc_termsupport_cwd {
 # i.e. when a script or function changes directory without `cd -q`, chpwd
 # will be called the output may be swallowed by the script or function.
 add-zsh-hook precmd mzc_termsupport_cwd
+
+# vim:filetype=zsh foldmethod=marker autoindent expandtab tabstop=4 softtabstop=4 shiftwidth=4
+# shellcheck shell=zsh
