@@ -1,4 +1,12 @@
 ## Options section
+
+ZSH_COMPDUMP="$HOME/.cache/zsh/zcompcache"                      #
+ZCOMPCACHE="$HOME/.cache/zsh/zcompcache"                        #
+[[ -d $ZSH_COMPDUMP ]] || mkdir -p $ZSH_COMPDUMP                # Create the parent directory if it doesn't exist
+compinit -d "$ZSH_COMPDUMP/zcompdump"                           #
+ZSH_CACHE_DIR="$HOME/.cache/zsh"                                # Cache directory
+
+
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
@@ -19,7 +27,6 @@ HISTFILE=~/.zsh_history                                         # history filena
 HISTTIMEFORMAT="[%F %T] "                                       # Time and date of history entries
 HISTSIZE=10000000                                               # History in memory
 SAVEHIST=100000000                                              # Hostory filesize (bigger than histsize for HIST_IGNORE_ALL_DUPS)
-
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path 
@@ -27,10 +34,13 @@ zstyle ':completion:*' menu select                              # Highlight menu
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 #export EDITOR=/usr/bin/nano
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+
+
+
 
 
 ## Keybindings section
